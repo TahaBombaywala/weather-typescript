@@ -16,18 +16,18 @@ type WeatherStateType = {
   }
 };
 
-const ThirdForm = () => {
+const ThirdForm:React.FC<{ state: any }> = () => {
   let locator = useLocation();
   const wData = locator.state as WeatherStateType;
 
-  const tempData = wData.current;
+  const tempData = wData?.current;
   console.log(tempData);
 
   return (
-    <div>
+    <div data-testid={"weather-data"}>
       <MainHeader />
       <div>
-        <h1> {wData.location.name} Weather </h1>
+        <h1> {wData?.location.name} Weather </h1>
         <h2> Climate : {tempData?.condition?.text}</h2>
         <h2> Temperature : {tempData?.feelslike_c} °C</h2>
         <h2> Wind Speed : {tempData?.wind_kph} in Kph</h2>

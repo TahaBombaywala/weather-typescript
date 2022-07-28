@@ -28,7 +28,6 @@ const SecondForm= () => {
   let navigator = useNavigate();
 
   const weatherDataHandler = async () => {
-    console.log("hshshh");
     
     const response = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=96b9d65269204ec38a1145038222307&q=${data.capital}&aqi=no`
@@ -46,7 +45,7 @@ const SecondForm= () => {
   },[]);
 
   return (
-    <div>
+    <div data-testid={"result-map"}>
       <h2 text-align="center"> Capital : {data?.capital}</h2>
       <h2 text-align="center"> Population : {data?.population}</h2>
       <h2 text-align="center">

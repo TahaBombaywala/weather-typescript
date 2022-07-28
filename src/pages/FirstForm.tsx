@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 
-const FirstForm :React.FC<{}> = () => {
+const FirstForm= () => {
   //   const nameInputRef = useRef();
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
@@ -49,6 +49,7 @@ const FirstForm :React.FC<{}> = () => {
     : "form-control";
 
   const apiHandler = async () => {
+    console.log("fdsdfdgfx");
     setIsLoading(true);
     try {
       const response = await fetch(
@@ -85,8 +86,8 @@ const FirstForm :React.FC<{}> = () => {
           // value={enteredName}
           autoComplete="off"
         />
-        <div>
-          {isLoading && <p>loading.....</p>  }
+        <div  data-testid={"result-map-0"}>
+          {isLoading && <p>loading.....</p>}
         </div>
         {nameInputIsInvalid && (
           <p className="error-text">Name must not be empty.</p>

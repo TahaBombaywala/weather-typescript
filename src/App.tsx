@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FirstForm />} />
         <Route path="/secondform" element={<SecondForm />} />
-        <Route path="/thirdform" element={<ThirdForm />} />
+        <Route path="/thirdform" element={<ThirdForm state={null} />} />
         <Route path="*" element={<NoMatch/>}/>
       </Routes>
     </div>
